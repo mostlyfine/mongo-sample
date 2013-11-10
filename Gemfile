@@ -9,7 +9,14 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'haml'
 
+group :development do
+  gem 'pry'
+end
 
 group :test do
   gem 'rspec'
+end
+
+group :production do
+  gem 'unicorn'
 end
