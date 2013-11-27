@@ -11,6 +11,9 @@ class User
   field :screen_name, type: String
   field :image, type: String
 
+  validates_uniqueness_of :uid
+  validates_presence_of :name
+
   def self.find_or_create_with_omniauth(auth)
     user = where(uid: auth['uid']).first
     unless user
